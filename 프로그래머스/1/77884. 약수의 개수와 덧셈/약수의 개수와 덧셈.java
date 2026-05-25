@@ -1,19 +1,19 @@
-class Solution {
+class Solution { 
+    static int cal(int num) {
+        int count = 1; 
+        for (int i= 1; i <= num / 2; i++) 
+            if (num % i == 0)
+                count++;
+        return count;
+    }
     public int solution(int left, int right) {
         int answer = 0;
-        
-        for (int i = left; i <= right; i++) {
-            if (isPerfectSquare(i)) {
-                answer -= i;
-            } else {
+        for (int i = left; i<= right; i++) {
+            if (cal(i) % 2 == 0)
                 answer += i;
-            }
+            else 
+                answer -= i;
         }
         return answer;
-    }
-
-    private boolean isPerfectSquare(int n) {
-        int sqrt = (int) Math.sqrt(n);
-        return (sqrt * sqrt == n);
     }
 }
