@@ -9,10 +9,12 @@ public class Solution {
         for(int i = 1; i < arr.length; i++) {
             if (arr[i] != list.get(list.size() - 1)) {
                 list.add(arr[i]);
-                
             }
         }
         
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        int[] answer = new int[list.size()];
+        for(int i=0;i<answer.length;i++) answer[i] = list.get(i);
+        
+        return answer;
     }
 }
